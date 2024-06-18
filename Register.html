@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Register :</h2>
+        <form action="/Home.html" method="post" target= _self id="registerForm">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="enter your email" >
+            </div>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="enter your username" >
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="enter your password" >
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="agree" name="agree"  >
+                <label for="agree">I agree to the terms and conditions</label>
+            </div>
+            <div class="form-group">
+                <button type="submit" id="submit">Register</button>
+            </div>
+        </form>
+        <p>Already have an account? <a href="Login.html">Login here.</a></p>
+    </div>
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", function(event) {
+            var email = document.getElementById("email").value;
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var agreeChecked = document.getElementById("agree").checked;
+            if (!email || !username || !password || !agreeChecked) {
+                alert("Please fill out all fields");
+                event.preventDefault(); 
+            } else {
+                event.preventDefault(); 
+                window.location.href = "index.html";
+            }
+        });
+    </script>
+</body>
+</html>
